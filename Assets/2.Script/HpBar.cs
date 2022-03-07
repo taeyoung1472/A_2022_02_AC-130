@@ -21,8 +21,13 @@ public class HpBar : MonoBehaviour
     }
     public void HpUpdate(float _hp)
     {
+        if(_hp <= 0)
+        {
+            gameObject.SetActive(false);
+        }
         hp = _hp;
-        fill.localScale = new Vector3(hpBarScale.x * (maxHp / hp), hpBarScale.y, hpBarScale.z);
+        fill.localScale = new Vector3(hpBarScale.x * (hp / maxHp), hpBarScale.y, hpBarScale.z);
+        print(hpBarScale.x * (hp / maxHp));
     }
     void Update()
     {

@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Default
   score: 100
   brustCount: 3
-  hp: 100
+  hp: 5
   speed: 2.5
   attackRange: 20
