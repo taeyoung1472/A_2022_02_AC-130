@@ -12,6 +12,7 @@ public class BulletMove : MonoBehaviour
     public float Damage { get { return damage; } set { damage = value; } }
     public void OnCollisionEnter(Collision collision)
     {
+        int temp = 0;
         Collider[] cols = Physics.OverlapSphere(transform.position, explosionRange);
         foreach (Collider item in cols)
         {
@@ -23,7 +24,17 @@ public class BulletMove : MonoBehaviour
                 {
                     tgt.Dead(new Vector3(transform.position.x,transform.position.y, transform.position.z),explosionForce,explosionRange);
                 }
+                temp++;
             }
+        }
+        if(temp != 0)
+        {
+            float size = Mathf.Log(damage) * 100 * temp;
+            if(size > 750)
+            {
+                size = 750;
+            }
+            GameManager.HitMark.Mark(size);
         }
         GameObject obj = Instantiate(explosionEffect,transform.position,Quaternion.identity);
         obj.transform.localScale = Vector3.one * Mathf.Sqrt(damage);

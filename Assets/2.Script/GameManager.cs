@@ -13,9 +13,11 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private CamManager camManager;
     [SerializeField] private Transform player, mainCam;
     [SerializeField] private User user;
+    [SerializeField] private HitMark hitMark;
     public User currentUser { get { return user; } }
     public static Transform Player { get { return Instance.player; } }
     public static Transform MainCam { get { return Instance.mainCam; } }
+    public static HitMark HitMark { get { return Instance.hitMark; } }
     private void Awake()
     {
         Time.timeScale = 1;

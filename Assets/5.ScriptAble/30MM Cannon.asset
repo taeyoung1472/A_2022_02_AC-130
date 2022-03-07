@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 5.56MM
   profileImage: {fileID: 0}
+  crossHair: {fileID: 21300000, guid: 698cb94ea59021d4eaa2befd654e1caa, type: 3}
   bullet: {fileID: 0}
   shootAudio: {fileID: 8300000, guid: cd474171e0ea9504bb63444c3edd86d6, type: 3}
   reroadAudio: {fileID: 0}

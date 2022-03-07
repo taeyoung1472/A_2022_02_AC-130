@@ -5,6 +5,7 @@ public class TurretInfo : ScriptableObject
     [Header("ÅÍ·¿°ü·Ã")]
     public string name;
     public Sprite profileImage;
+    public Sprite crossHair;
     public GameObject bullet;
     public AudioClip shootAudio;
     public AudioClip reroadAudio;

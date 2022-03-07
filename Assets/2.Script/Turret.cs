@@ -10,10 +10,12 @@ public class Turret : MonoBehaviour, ISound
     [SerializeField] private GameObject soundObj;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform firePos;
+    [SerializeField] private Image crossHair;
     bool isShoot;
     public void Start()
     {
         StartCoroutine(TurretSystem());
+        Change(turret);
     }
     public void Shoot(bool _isShoot)
     {
@@ -41,5 +43,10 @@ public class Turret : MonoBehaviour, ISound
     {
         GameObject obj = Instantiate(soundObj);
         obj.GetComponent<SoundObject>().PlaySound(clip, 0.1f);
+    }
+    public void Change(TurretInfo info)
+    {
+        turret = info;
+        crossHair.sprite = turret.crossHair; 
     }
 }
