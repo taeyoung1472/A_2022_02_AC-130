@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     //[SerializeField] private 
     [SerializeField] private Animator animator;
     [SerializeField] HpBar hpBar;
+    Collider col;
     Transform player;
     bool isDead;
     bool isCanAttack;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
         player = GameManager.Player;
         nav.SetDestination(player.position);
         nav.speed = enemyInfo.speed;
+        col = GetComponent<Collider>();
         hpBar.Set(hp);
     }
     /*public IEnumerator AttackCor()
@@ -35,6 +37,10 @@ public class Enemy : MonoBehaviour
     {
 
     }*/
+    public void Update()
+    {
+        
+    }
     public IEnumerator Checkdistance()
     {
         while (!isDead)
@@ -72,6 +78,6 @@ public class Enemy : MonoBehaviour
         ragdoll.SetActive(true);
         character.SetActive(false);
         spine.AddExplosionForce(force * Random.Range(0.75f,1.25f), pos, range, 1, ForceMode.Impulse);
-        //Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 5f);
     }
 }

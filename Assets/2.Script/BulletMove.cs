@@ -10,7 +10,7 @@ public class BulletMove : MonoBehaviour
     [SerializeField] private float damage;
     public float ExplosionRange { get { return explosionRange; } set { explosionRange = value; } }
     public float Damage { get { return damage; } set { damage = value; } }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         int temp = 0;
         Collider[] cols = Physics.OverlapSphere(transform.position, explosionRange);

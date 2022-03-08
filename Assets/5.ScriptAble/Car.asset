@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dabc3eb98de64e48abeb2a5ad1fc8ff, type: 3}
-  m_Name: Default
+  m_Name: Car
   m_EditorClassIdentifier: 
   name: Default
   score: 100
   brustCount: 3
-  hp: 5
-  speed: 2.5
+  hp: 15
+  speed: 10
   attackRange: 20
