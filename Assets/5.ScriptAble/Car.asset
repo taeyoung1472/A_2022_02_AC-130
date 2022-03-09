@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dabc3eb98de64e48abeb2a5ad1fc8ff, type: 3}
   m_Name: Car
   m_EditorClassIdentifier: 
-  name: Default
-  score: 100
+  name: Car
+  score: 250
   brustCount: 3
   hp: 15
   speed: 10

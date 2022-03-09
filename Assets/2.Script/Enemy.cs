@@ -75,6 +75,7 @@ public class Enemy : MonoBehaviour
         nav.speed = 0;
         gameObject.GetComponent<Collider>().enabled = false;
         Destroy(gameObject.GetComponent<Rigidbody>());
+        GameManager.UIManager.ScoreRegist(enemyInfo.score, enemyInfo.name, "Kill");
         ragdoll.SetActive(true);
         character.SetActive(false);
         spine.AddExplosionForce(force * Random.Range(0.75f,1.25f), pos, range, 1, ForceMode.Impulse);
